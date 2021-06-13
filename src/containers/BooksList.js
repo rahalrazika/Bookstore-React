@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-const BookList = () => (
+const BooksList = () => (
   <div>
     <table>
       <tr>
@@ -19,4 +19,4 @@ const BookList = () => (
 const mapStateToProps = (state) => ({
   books: state.books,
 });
-export default connect(mapStateToProps)(BookList);
+export default connect(mapStateToProps)(BooksList);

@@ -1,12 +1,13 @@
-import BookFrom from '../containers/BookFrom';
-import BookList from '../containers/BooksList';
+import BooksFrom from '../containers/BooksFrom';
+import BooksList from '../containers/BooksList';
 import '../style/App.css';
 
 function App() {
   return (
     <div className="App">
-      <BookFrom />
-      <BookList />
+      <BooksList />
+      <BooksFrom />
+
     </div>
   );
 }
