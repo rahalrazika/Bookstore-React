@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import './style/index.css';
 import App from './components/App';
-import bookReducer from './reducers/books';
+import rootReducer from './reducers/index';
 
 const initialState = [
   { id: Math.random(), title: 'The Call of the Wild', category: 'Action' },
@@ -14,7 +14,7 @@ const initialState = [
   { id: Math.random(), title: 'Clean Code', category: 'Learning' },
 
 ];
-const store = createStore(bookReducer, initialState);
+const store = createStore(rootReducer, initialState);
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>

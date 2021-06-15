@@ -33,6 +33,6 @@ BooksList.defaultProps = {
   books: [],
 };
 const mapStateToProps = (state) => ({
-  books: state,
+  books: state.rootReducer,
 });
 export default connect(mapStateToProps)(BooksList);

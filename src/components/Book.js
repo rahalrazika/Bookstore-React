@@ -18,9 +18,9 @@ Books.propTypes = {
 };
 
 Books.defaultProps = {
-  bookId: '',
-  bookTitle: '',
-  bookCategory: '',
+  bookId: null,
+  bookTitle: null,
+  bookCategory: null,
 };
 
 export default Books;
