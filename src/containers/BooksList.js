@@ -6,19 +6,23 @@ import Books from '../components/Book';
 const BooksList = ({ books }) => (
   <div>
     <table>
-      <tr>
-        <th>Book ID</th>
-        <th>Title</th>
-        <th>Category</th>
-      </tr>
-      {books.map((book) => (
-        <Books
-          key={book.id}
-          bookId={book.id}
-          bookTitle={book.title}
-          bookCategory={book.category}
-        />
-      ))}
+      <thead>
+        <tr>
+          <th>Book ID</th>
+          <th>Title</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        {books.map((book) => (
+          <Books
+            key={book.id}
+            bookId={book.id}
+            bookTitle={book.title}
+            bookCategory={book.category}
+          />
+        ))}
+      </tbody>
     </table>
   </div>
 );
@@ -29,6 +33,6 @@ BooksList.defaultProps = {
   books: [],
 };
 const mapStateToProps = (state) => ({
-  books: state.books,
+  books: state,
 });
 export default connect(mapStateToProps)(BooksList);
