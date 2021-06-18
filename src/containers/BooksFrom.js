@@ -13,7 +13,6 @@ const BooksFrom = ({ createBook }) => {
     createBook(Data);
     setData({ title: '', category: '' });
   };
-
   return (
     <form>
       <label htmlFor="title">
@@ -26,10 +25,11 @@ const BooksFrom = ({ createBook }) => {
           {bookCat.map((category) => <option key={category} value={category}>{category}</option>)}
         </select>
       </label>
-      <button type="submit" onClick={handleSubmit}>Submit</button>
+      <button type="submit" onSubmit={handleSubmit}>Submit</button>
     </form>
   );
 };
+
 BooksFrom.propTypes = {
   createBook: PropTypes.func.isRequired,
 };
