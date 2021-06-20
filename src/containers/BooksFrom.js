@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { createBook } from '../actions/index';
 
 const BooksFrom = ({ createBook }) => {
-  const bookCat = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+  const bookCat = ['ALL', 'Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
   const [Data, setData] = useState({ title: '', category: '' });
   const handleChange = (e) => {
     setData((Data) => ({ ...Data, [e.target.name]: e.target.value }));
