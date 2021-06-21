@@ -13,6 +13,7 @@ const BooksFrom = ({ createBook }) => {
     createBook(Data);
     setData({ title: '', category: '' });
   };
+
   return (
     <form>
       <label htmlFor="title">
