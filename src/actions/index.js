@@ -7,9 +7,9 @@ export const createBook = (book) => ({
   payload: book,
 });
 
-export const removeBook = (book) => ({
+export const removeBook = (bookId) => ({
   type: REMOVE_BOOK,
-  payload: book,
+  payload: bookId,
 });
 export const changeFilter = (category) => ({
   type: CHANGE_FILTER,
