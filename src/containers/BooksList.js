@@ -23,9 +23,9 @@ const BooksList = ({ books, removeBook }) => {
           {books.map((book) => (
             <Books
               key={book.id}
-              bookId={book.id}
-              bookTitle={book.title}
-              bookCategory={book.category}
+              bookId={book.bookId}
+              bookTitle={book.bookTitle}
+              bookCategory={book.bookCategory}
               handelRemove={handelRemove}
 
             />
