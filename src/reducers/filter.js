@@ -1,9 +1,11 @@
-const CHANGE_FILTER = 'CHANGE_FILTER ';
-const initialFilterState = 'ALL';
-const filterReducer = (state = initialFilterState, action) => {
+const CHANGE_FILTER = 'CHANGE_FILTER';
+const selectedCategory = {
+  selectedCategory: 'ALL',
+};
+const filterReducer = (state = selectedCategory, action) => {
   switch (action.type) {
     case CHANGE_FILTER:
-      return action.payload;
+      return { ...state, selectedCategory: action.payload };
     default:
       return state;
   }

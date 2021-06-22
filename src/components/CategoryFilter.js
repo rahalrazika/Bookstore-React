@@ -1,8 +1,11 @@
-const CategoryFilter = () => {
+/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
+
+const CategoryFilter = ({ chooseCategory, selectedCategory }) => {
   const bookCat = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
   return (
-    <select name="categoryFilter">
+    <select value={selectedCategory} name="categoryFilter" onChange={chooseCategory}>
       <option>ALL</option>
       {bookCat.map((cate) => (
         <option key={cate} value={cate}>
@@ -11,6 +14,16 @@ const CategoryFilter = () => {
       ))}
     </select>
   );
+};
+
+CategoryFilter.prototype = {
+  chooseCategory: PropTypes.func,
+  selectedCategory: PropTypes.string,
+};
+CategoryFilter.defaultProps = {
+  chooseCategory: null,
+  selectedCategory: '',
+
 };
 
 export default CategoryFilter;

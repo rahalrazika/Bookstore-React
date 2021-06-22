@@ -5,7 +5,7 @@ import Books from '../components/Book';
 import CategoryFilter from '../components/CategoryFilter';
 
 const BooksList = ({
-  books, removeBook, changeFilter, filter,
+  books, removeBook, changeFilter, selectedCategory,
 }) => {
   const handelRemove = (bookId) => {
     removeBook(bookId);
@@ -14,15 +14,15 @@ const BooksList = ({
     changeFilter(e.target.value);
   };
   const searchBooks = () => {
-    if (filter === 'ALL') {
+    if (selectedCategory === 'ALL') {
       return books;
     }
-    return [...books].filter((book) => book.category === filter);
+    return [...books].filter((book) => book.category === selectedCategory);
   };
   return (
 
     <div>
-      <CategoryFilter onChange={handleFilterChange} />
+      <CategoryFilter selectedCategory={selectedCategory} chooseCategory={handleFilterChange} />
       <table>
         <thead>
           <tr>
@@ -53,17 +53,17 @@ BooksList.propTypes = {
   books: PropTypes.instanceOf(Array),
   removeBook: PropTypes.func,
   changeFilter: PropTypes.func,
-  filter: PropTypes.string,
+  selectedCategory: PropTypes.string,
 };
 BooksList.defaultProps = {
   books: [],
   removeBook: null,
   changeFilter: null,
-  filter: '',
+  selectedCategory: '',
 };
 const mapStateToProps = (state) => ({
   books: state.bookReducer.books,
-  filter: state.filterReducer,
+  selectedCategory: state.filterReducer.selectedCategory,
 });
 const mapDispatchToProps = {
   removeBook,
