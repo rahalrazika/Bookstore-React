@@ -10,7 +10,7 @@ const BooksList = ({
   const handelRemove = (bookId) => {
     removeBook(bookId);
   };
-   const handleFilterChange = (e) => {
+  const handleFilterChange = (e) => {
     changeFilter(e.target.value);
   };
   const searchBooks = () => {

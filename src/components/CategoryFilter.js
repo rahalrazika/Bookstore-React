@@ -6,7 +6,6 @@ const CategoryFilter = ({ chooseCategory, selectedCategory }) => {
 
   return (
     <select value={selectedCategory} name="categoryFilter" onChange={chooseCategory}>
-      <option>ALL</option>
       {bookCat.map((cate) => (
         <option key={cate} value={cate}>
           {cate}
