@@ -1,25 +1,39 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeBook } from '../actions/index';
+import { changeFilter, removeBook } from '../actions/index';
 import Books from '../components/Book';
+import CategoryFilter from '../components/CategoryFilter';
 
-const BooksList = ({ books, removeBook }) => {
+const BooksList = ({
+  books, removeBook, changeFilter, selectedCategory,
+}) => {
   const handelRemove = (bookId) => {
     removeBook(bookId);
+  };
+  const handleFilterChange = (e) => {
+    changeFilter(e.target.value);
+  };
+  const searchBooks = () => {
+    if (selectedCategory === 'ALL') {
+      return books;
+    }
+    return [...books].filter((book) => book.category === selectedCategory);
   };
   return (
 
     <div>
+      <CategoryFilter selectedCategory={selectedCategory} chooseCategory={handleFilterChange} />
       <table>
         <thead>
           <tr>
             <th>Book ID</th>
             <th>Title</th>
             <th>Category</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
-          {books.map((book) => (
+          {searchBooks().map((book) => (
             <Books
               key={book.id}
               bookId={book.id}
@@ -38,15 +52,21 @@ const BooksList = ({ books, removeBook }) => {
 BooksList.propTypes = {
   books: PropTypes.instanceOf(Array),
   removeBook: PropTypes.func,
+  changeFilter: PropTypes.func,
+  selectedCategory: PropTypes.string,
 };
 BooksList.defaultProps = {
   books: [],
   removeBook: null,
+  changeFilter: null,
+  selectedCategory: '',
 };
 const mapStateToProps = (state) => ({
-  books: state.books,
+  books: state.bookReducer.books,
+  selectedCategory: state.filterReducer.selectedCategory,
 });
 const mapDispatchToProps = {
   removeBook,
+  changeFilter,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
