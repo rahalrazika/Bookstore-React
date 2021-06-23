@@ -40,7 +40,6 @@ const BooksList = ({
               bookTitle={book.title}
               bookCategory={book.category}
               handelRemove={handelRemove}
-
             />
 
           ))}

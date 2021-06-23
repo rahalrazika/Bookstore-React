@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import PropTypes from 'prop-types';
 
 const CategoryFilter = ({ chooseCategory, selectedCategory }) => {
@@ -15,7 +14,7 @@ const CategoryFilter = ({ chooseCategory, selectedCategory }) => {
   );
 };
 
-CategoryFilter.prototype = {
+CategoryFilter.propTypes = {
   chooseCategory: PropTypes.func,
   selectedCategory: PropTypes.string,
 };

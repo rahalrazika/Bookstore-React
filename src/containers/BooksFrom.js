@@ -1,40 +1,51 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createBook } from '../actions/index';
+import { createBook, incrementId } from '../actions/index';
 
-const BooksFrom = ({ createBook }) => {
+const BooksForm = ({ createBook, incrementId, lastId }) => {
   const bookCat = ['ALL', 'Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
-  const [Data, setData] = useState({ title: '', category: '' });
+  const [Data, setData] = useState({ id: lastId, title: '', category: '' });
   const handleChange = (e) => {
-    setData((Data) => ({ ...Data, [e.target.name]: e.target.value }));
+    setData((Data) => ({ ...Data, id: lastId, [e.target.name]: e.target.value }));
   };
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    incrementId();
     createBook(Data);
-    setData({ title: '', category: '' });
+    setData({ title: '', category: '', id: lastId });
+    e.target.reset();
   };
-
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="title">
         Book title:
-        <input type="text" name="bookTitle" onChange={handleChange} />
+        <input type="text" name="title" onChange={handleChange} />
       </label>
       <label htmlFor="body">
         Choose a category:
-        <select name="categories" onChange={handleChange}>
+        <select name="category" onChange={handleChange}>
           {bookCat.map((category) => <option key={category} value={category}>{category}</option>)}
         </select>
       </label>
-      <button type="submit" onSubmit={handleSubmit}>Submit</button>
+      <button type="submit" value="submit">Submit</button>
     </form>
   );
 };
 
-BooksFrom.propTypes = {
-  createBook: PropTypes.func.isRequired,
+const mapStateToProps = (state) => ({
+  lastId: state.bookReducer.lastId,
+});
+
+BooksForm.propTypes = {
+  createBook: PropTypes.func,
+  lastId: PropTypes.number,
+  incrementId: PropTypes.func,
 };
-const mapDispatchToProps = {
-  createBook,
+BooksForm.defaultProps = {
+  createBook: null,
+  incrementId: null,
+  lastId: 6,
 };
-export default connect(null, mapDispatchToProps)(BooksFrom);
+
+export default connect(mapStateToProps, { createBook, incrementId })(BooksForm);
