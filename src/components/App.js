@@ -7,9 +7,10 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <BooksList />
-      <BooksForm />
-
+      <div className="d-flex container">
+        <BooksList />
+        <BooksForm />
+      </div>
     </div>
   );
 }
