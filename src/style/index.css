@@ -1,27 +1,57 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;800&display=swap');
 body {
   margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f5f6fa;
 }
 
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
+.d-flex {
+  display: flex;
+}
+nav {
+  width: 100%;
+  height: 5rem;
+  background-color: #ffffff;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+.user-img {
+  width: 1rem;
+  height: 1rem;
+}
+nav button {
+  background-color: transparent;
+  height: 3rem;
+  width: 3rem;
+  border: 1px solid #f5f6fa;
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem;
+}
+nav h1 {
+  color: #0290ff;
+  letter-spacing: normal;
+  line-height: normal;
+}
+nav .nav-container {
+  width: 88%;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .nav-links  {
+  width: 55%;
+  height: 50%;
+ justify-content: space-between;
+ align-items: center;
+}
+nav .nav-links span {
+text-transform: uppercase;
+color: #121212;
+letter-spacing: 0.1rem;
+font-size: 0.9rem;
+}
+.non-active-class {
+  opacity: 0.5;
 }

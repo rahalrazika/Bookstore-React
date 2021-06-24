@@ -1,13 +1,16 @@
 import '../style/index.css';
+import userImg from '../assete/user-img.png';
 
 const NavBar = () => (
-  <nav>
-    <div>
-      <div className="nav-links">
+  <nav className="d-flex">
+    <div className="d-flex nav-container">
+      <div className="nav-links d-flex ">
         <h1>Bookstore CMS</h1>
         <span>Books</span>
-        <span>Categories</span>
+        <span className="non-active-class">Categories</span>
       </div>
+      {/*  <img alt="user-img" className="user-img" src={userImg} /> */}
+      <button type="button"><img alt="user-img" className="user-img" src={userImg} /></button>
     </div>
   </nav>
 );
