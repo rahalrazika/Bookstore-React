@@ -27,6 +27,8 @@ body {
   flex-direction: column;
   justify-content: space-around;
   margin: 0 3rem;
+  border-bottom: 3px solid #e8e8e8;
+  padding-bottom: 3rem;
 }
 
 nav {
@@ -106,13 +108,12 @@ nav .nav-links span {
   opacity: 0.5;
   font-size: 0.8rem;
   font-weight: 800;
-  margin: 1.2rem;
 }
 
 .book-description h2 {
   line-height: normal;
   letter-spacing: -0.2px;
-  margin-top: -0.9rem;
+  margin-top: 0.1rem;
 }
 
 .book-description h5 {
@@ -150,6 +151,8 @@ nav .nav-links span {
 
 .progress-bar {
   margin-top: 2rem;
+  border-right: 1px solid #f5f6fa;
+  padding-right: 4rem;
 }
 
 .progress-circle {
@@ -197,4 +200,53 @@ nav .nav-links span {
 .chapter-container {
   flex-direction: column;
   justify-content: space-around;
+}
+.filter-category-container {
+  justify-content: flex-end;
+  margin-top: 2rem;
+  height: 2rem;
+}
+.filter-category {
+  width: 12rem;
+  background-color: #fff;
+  border: 1px solid #0290ff;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.form {
+  margin-bottom: 4rem;
+  margin-right: 15rem
+}
+.form-container {
+  justify-content: space-between;
+}
+
+.form-title {
+  text-transform: uppercase;
+  color: #888888;
+  text-align: left;
+  margin: 3rem;
+}
+
+.form-input {
+  width: 50%;
+  height: 2rem;
+  margin: 0 2rem;
+  border: 1px solid #0290ff;
+}
+
+.category {
+  width: 11rem;
+  height: 2rem;
+  border: 1px solid #0290ff;
+}
+.button-form {
+  width: 6rem;
+  height: 2rem;
+  margin: 0.2rem;
+  background-color: #0290ff;
+  color: #fff;
+  border: none;
+  text-transform: uppercase
 }

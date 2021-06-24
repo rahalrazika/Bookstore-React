@@ -17,19 +17,19 @@ const BooksForm = ({ createBook, incrementId, lastId }) => {
     e.target.reset();
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="title">
-        Book title:
-        <input type="text" name="title" onChange={handleChange} />
-      </label>
-      <label htmlFor="body">
-        Choose a category:
-        <select name="category" onChange={handleChange}>
+    <div className="form">
+      <h2 className="form-title">add new book</h2>
+      <form className="form-container" onSubmit={handleSubmit}>
+
+        <input className="form-input" placeholder="Book Title" type="text" name="title" onChange={handleChange} />
+
+        <select className="category" name="category" onChange={handleChange}>
           {bookCat.map((category) => <option key={category} value={category}>{category}</option>)}
         </select>
-      </label>
-      <button type="submit" value="submit">Submit</button>
-    </form>
+
+        <button className="button-form" type="submit" value="submit">Submit</button>
+      </form>
+    </div>
   );
 };
 

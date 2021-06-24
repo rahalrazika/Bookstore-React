@@ -1,5 +1,5 @@
 import '../style/index.css';
-import userImg from '../assete/user-img.png';
+import userImg from '../assets/user-img.png';
 
 const NavBar = () => (
   <nav className="d-flex">
