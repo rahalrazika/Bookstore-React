@@ -201,11 +201,13 @@ nav .nav-links span {
   flex-direction: column;
   justify-content: space-around;
 }
+
 .filter-category-container {
   justify-content: flex-end;
   margin-top: 2rem;
   height: 2rem;
 }
+
 .filter-category {
   width: 12rem;
   background-color: #fff;
@@ -216,15 +218,16 @@ nav .nav-links span {
 
 .form {
   margin-bottom: 4rem;
-  margin-right: 15rem
+  margin-right: 15rem;
 }
+
 .form-container {
   justify-content: space-between;
 }
 
 .form-title {
   text-transform: uppercase;
-  color: #888888;
+  color: #888;
   text-align: left;
   margin: 3rem;
 }
@@ -241,6 +244,7 @@ nav .nav-links span {
   height: 2rem;
   border: 1px solid #0290ff;
 }
+
 .button-form {
   width: 6rem;
   height: 2rem;
@@ -248,5 +252,5 @@ nav .nav-links span {
   background-color: #0290ff;
   color: #fff;
   border: none;
-  text-transform: uppercase
+  text-transform: uppercase;
 }
