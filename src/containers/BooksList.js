@@ -21,31 +21,18 @@ const BooksList = ({
   };
   return (
 
-    <div>
+    <div className="main-container">
       <CategoryFilter selectedCategory={selectedCategory} chooseCategory={handleFilterChange} />
-      <table>
-        <thead>
-          <tr>
-            <th>Book ID</th>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {searchBooks().map((book) => (
-            <Books
-              key={book.id}
-              bookId={book.id}
-              bookTitle={book.title}
-              bookCategory={book.category}
-              handelRemove={handelRemove}
+      {searchBooks().map((book) => (
+        <Books
+          key={book.id}
+          bookId={book.id}
+          bookTitle={book.title}
+          bookCategory={book.category}
+          handelRemove={handelRemove}
+        />
 
-            />
-
-          ))}
-        </tbody>
-      </table>
+      ))}
     </div>
   );
 };

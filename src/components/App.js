@@ -1,13 +1,16 @@
-import BooksFrom from '../containers/BooksFrom';
+import BooksForm from '../containers/BooksForm';
 import BooksList from '../containers/BooksList';
 import '../style/App.css';
+import NavBar from './NavBar';
 
 function App() {
   return (
     <div className="App">
-      <BooksList />
-      <BooksFrom />
-
+      <NavBar />
+      <div className="d-flex container">
+        <BooksList />
+        <BooksForm />
+      </div>
     </div>
   );
 }

@@ -4,7 +4,7 @@
 
 
 ## Screenshots
-![Screenshot](screenshot)
+![Screenshot](src/assets/screenshot.png)
 
 
 
